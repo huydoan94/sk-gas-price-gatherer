@@ -1,0 +1,20 @@
+{
+  "env": {
+    "node": true
+  },
+  "extends": ["eslint:recommended", "standard"],
+  "parser": "@babel/eslint-parser",
+  "rules": {
+    "class-methods-use-this": [0],
+    "import/extensions": [0],
+    "import/no-extraneous-dependencies": [0],
+    "import/no-named-as-default": [0],
+    "import/no-unresolved": [0],
+    "import/prefer-default-export": 0,
+    "max-len": [2, { "code": 120 }],
+    "no-new": [0],
+    "no-negated-condition": 0,
+    "require-atomic-updates": 0,
+    "semi": ["error", "always"]
+  }
+}
