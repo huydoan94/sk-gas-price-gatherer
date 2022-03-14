@@ -123,9 +123,9 @@ export const getPriceByLocationName = async (req, res) => {
   const search = (req.query?.search || '');
   let resStations = [];
   let total = 0;
-  let next = -2;
+  let next;
 
-  while (!isNaN(next) && next !== total - 1) {
+  while (next !== total - 1) {
     const locationBySearchTerm = await getLocationBySearchTerm(search, next);
 
     if (!locationBySearchTerm) break;
