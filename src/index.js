@@ -8,10 +8,10 @@ import { getPriceByLocationName } from './gas-price-service';
 
 const app = express();
 
-// app.use('*', (req, res, next) => {
-//   if (req.secure || req.headers['x-forwarded-proto'] === 'https') return next();
-//   res.redirect(`https://${req.hostname}${req.originalUrl}`);
-// });
+app.use('*', (req, res, next) => {
+  if (req.secure || req.headers['x-forwarded-proto'] === 'https') return next();
+  res.redirect(`https://${req.hostname}${req.originalUrl}`);
+});
 
 app.get('/priceByLocation', getPriceByLocationName);
 
