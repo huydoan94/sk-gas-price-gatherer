@@ -4,7 +4,7 @@ import 'regenerator-runtime/runtime';
 import path from 'path';
 import express from 'express';
 
-import { getPriceByLocationName } from './gas-price-service';
+import { getPriceByLocationName, getPriceInVn } from './gas-price-service';
 
 const app = express();
 
@@ -14,6 +14,7 @@ app.use('*', (req, res, next) => {
 });
 
 app.get('/priceByLocation', getPriceByLocationName);
+app.get('/priceInVn', getPriceInVn);
 
 app.get('/not-found', (_, res) => res.status(404).sendFile(path.join(__dirname, 'index.html')));
 app.get('*', (req, res) => res.redirect(`https://${req.hostname}/not-found`));
