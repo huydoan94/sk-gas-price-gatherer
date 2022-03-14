@@ -13,6 +13,7 @@ app.use('*', (req, res, next) => {
   res.redirect(`https://${req.hostname}${req.originalUrl}`);
 });
 
+app.get('/pingCheck', (_, res) => res.sendStatus(200));
 app.get('/priceByLocation', getPriceByLocationName);
 app.get('/priceInVn', getPriceInVn);
 
